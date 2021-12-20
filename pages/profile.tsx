@@ -1,5 +1,5 @@
 import React from 'react';
-import { useUser } from '@auth0/nextjs-auth0';
+import { useUser, withPageAuthRequired } from '@auth0/nextjs-auth0';
 import Image from 'next/image'
 
 export default function Profile() {
@@ -18,3 +18,5 @@ export default function Profile() {
     )
   );
 }
+
+export const getServerSideProps = withPageAuthRequired();
