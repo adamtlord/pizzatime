@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useUser } from '@auth0/nextjs-auth0';
 import { createClient } from 'contentful';
-import PostPreview from '../components/PostPreview';
+import PostPreview from '../components/post-preview';
 
 export default function Home({ posts }) {
 
