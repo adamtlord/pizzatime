@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from "next/link";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { ArrowNarrowLeftIcon } from "@heroicons/react/solid";
-import { ContentfulPost } from "../../types";
+
 export default function Post({ post }) {
   const { body, image, title } = post.fields;
   const dateDisplay = new Date(post.sys.createdAt)
