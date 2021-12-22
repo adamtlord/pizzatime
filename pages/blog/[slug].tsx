@@ -44,11 +44,10 @@ export async function getStaticProps({ params }) {
 
 export const getStaticPaths = async () => {
   const res = await client.getEntries({ content_type: 'post' })
-
   const paths = res.items.map(post => {
     return {
       params: {
-        slug: post.fields.slug
+        slug: post.fields['slug']
       }
     }
   })
