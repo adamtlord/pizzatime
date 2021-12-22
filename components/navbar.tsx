@@ -13,7 +13,7 @@ const LoggedIn = ({ user }) => (
   <>
     <Menu as="div" className="ml-3 relative">
       <div>
-        <Menu.Button className="bg-white rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        <Menu.Button className="bg-white rounded-full shadow-md p-2 flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
           <span className="sr-only">Open user menu</span>
           <Image
             className="h-8 w-8 rounded-full"
@@ -62,7 +62,7 @@ const LoggedIn = ({ user }) => (
 const LoggedOut = () => (
   <div>
     {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-    <a href="/api/auth/login" className="text-gray-900 inline-flex items-center px-1 pt-1 font-medium">Log In</a>
+    <a href="/api/auth/login" className="inline-flex items-center leading-4 px-4 py-2 border border-transparent font-medium rounded-full shadow-sm text-white bg-red-700 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">Log In</a>
   </div>
 )
 export default function Example() {
@@ -71,11 +71,11 @@ export default function Example() {
   if (error) return <div>{error.message}</div>;
 
   return (
-    <Disclosure as="nav" className="bg-white shadow">
+    <Disclosure as="nav">
       {({ open }) => (
         <>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between h-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b">
+            <div className="flex justify-between h-24">
               <div className="flex">
                 <Link href="/" passHref>
                   <a className="flex-shrink-0 flex items-center">
@@ -103,7 +103,7 @@ export default function Example() {
               </div>
               <div className="-mr-2 flex items-center sm:hidden">
                 {/* Mobile menu button */}
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-500">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XIcon className="block h-6 w-6" aria-hidden="true" />
@@ -121,7 +121,7 @@ export default function Example() {
               <Disclosure.Button
                 as="a"
                 href="/"
-                className="bg-indigo-50 border-indigo-500 text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+                className="bg-red-50 border-red-500 text-red-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
               >
                 Home
               </Disclosure.Button>

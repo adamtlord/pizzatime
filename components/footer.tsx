@@ -5,7 +5,7 @@ export default function Footer() {
         <div className="flex justify-center space-x-6 md:order-2">
         </div>
         <div className="mt-8 md:mt-0 md:order-1">
-          <p className="text-center text-base text-gray-400">&copy; 2021 Pizza Time, Inc. All rights reserved.</p>
+          <p className="text-center text-base text-gray-400">&copy; 2021 Pizza Time, Inc. Zero rights reserved.</p>
         </div>
       </div>
     </footer>
