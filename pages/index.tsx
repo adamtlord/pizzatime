@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import { useUser } from '@auth0/nextjs-auth0';
-import { createClient } from 'contentful';
 import PostPreview from '../components/post-preview';
+import {client} from '../content/contentful';
+import { GetStaticProps } from 'next';
 
 export default function Home({ posts }) {
 
@@ -23,7 +24,7 @@ export default function Home({ posts }) {
           {user ? `Welcome, ${user.name}!` : 'Welcome to Pizza Time!'}
         </h1>
         <section className="mt-12">
-          <h2 className="text-3xl font-extrabold text-red-700 mb-6">From the Pizza Blog</h2>
+          <h2 className="text-3xl font-extrabold text-red-700 mb-6">From the Pizza Time Blog</h2>
           <div className="grid gap-6 lg:grid-cols-4">
             {posts.map((post) => (
               <PostPreview key={post.sys.id} post={post} />
@@ -35,11 +36,7 @@ export default function Home({ posts }) {
   )
 }
 
-export async function getStaticProps() {
-  const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-  })
+export const getStaticProps: GetStaticProps = async() => {
 
   const res = await client.getEntries({
     content_type: 'post'

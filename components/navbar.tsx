@@ -1,6 +1,7 @@
 import { Fragment } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from "next/router";
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { useUser } from '@auth0/nextjs-auth0';
@@ -67,6 +68,7 @@ const LoggedOut = () => (
 )
 export default function Example() {
   const { user, error, isLoading } = useUser();
+  const router = useRouter();
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
 
@@ -89,16 +91,21 @@ export default function Example() {
                     <span className="hidden lg:block text-red-700 font-bold text-2xl ml-2">Pizza Time</span>
                   </a>
                 </Link>
-                <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-                  {/* <a
-                    href="#"
-                    className="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                  >
-                    Dashboard
-                  </a> */}
-                </div>
+
               </div>
-              <div className="hidden sm:ml-6 sm:flex sm:items-center">
+              <div className="hidden sm:ml-6 sm:flex sm:items-center sm:space-x-6">
+                <div className="flex">
+                  <Link href="/blog" passHref>
+                    <a
+                      className={
+                        classNames(
+                          router.pathname.startsWith("/blog") ? 'border-red-700' : 'border-transparent hover:border-red-300',
+                          'text-gray-700 inline-flex items-center px-1 pt-1 border-b-2')}
+                    >
+                      Blog
+                    </a>
+                  </Link>
+                </div>
                 {user ? <LoggedIn user={user} /> : <LoggedOut />}
               </div>
               <div className="-mr-2 flex items-center sm:hidden">

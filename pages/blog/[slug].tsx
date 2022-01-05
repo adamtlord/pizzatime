@@ -1,8 +1,9 @@
 import { createClient } from "contentful"
 import Image from 'next/image'
-import Link from "next/link";
+import Link from 'next/link';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import { ArrowNarrowLeftIcon } from "@heroicons/react/solid";
+import { ArrowNarrowLeftIcon } from '@heroicons/react/solid';
+import { client } from '../../content/contentful';
 
 export default function Post({ post }) {
   const { body, image, title } = post.fields;
@@ -14,7 +15,7 @@ export default function Post({ post }) {
       <p className="text-sm text-gray-500">{dateDisplay.toDateString()}</p>
       {documentToReactComponents(body)}
       <div className="border-t mt-8 pt-8">
-        <Link href="/">
+        <Link href="/blog">
           <a className="flex items-center text-red-700 no-underline">
             <ArrowNarrowLeftIcon className="h-5 w-5 mr-2" />
             Back
@@ -24,11 +25,6 @@ export default function Post({ post }) {
     </article>
   )
 }
-
-const client = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-})
 
 export async function getStaticProps({ params }) {
   const { items } = await client.getEntries({
