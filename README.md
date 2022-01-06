@@ -5,8 +5,8 @@ This is a [Next.js](https://nextjs.org/) Typescript project bootstrapped with [`
 - [Auth0](https://auth0.com/) for Authentication, with username/password, Google OAuth, Github OAuth options
 - [TailwindCSS](https://v2.tailwindcss.com/) and [TailwindUI](https://tailwindui.com/), including [HeadlessUI](https://headlessui.dev/) and React [Heroicons](https://heroicons.com/)
 - [Contentful](https://www.contentful.com/) for CMS content with deploy webhook
-- _[Prisma](https://www.prisma.io/nextjs) for database connection (planned)_
-- _[Render](https://render.com/) for hosted postgres service (planned)_
+- [Prisma](https://www.prisma.io/nextjs) for database connection
+- [Render](https://render.com/) for hosted postgres service
 - _[Next Connect](https://github.com/hoangvvo/next-connect#readme) for API routing (planned)_
 - _[Vercel SWR](https://swr.vercel.app/) for data fetching (planned)_
 
