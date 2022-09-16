@@ -1,5 +1,9 @@
 This is a [Next.js](https://nextjs.org/) Typescript project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Demo
+
+https://unruffled-northcutt-fed741.netlify.app/
+
 ## Integrations
 
 - [Auth0](https://auth0.com/) for Authentication, with username/password, Google OAuth, Github OAuth options
